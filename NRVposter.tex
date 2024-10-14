@@ -1,12 +1,13 @@
 \documentclass{NRVposter}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{wrapfig}
 
 \title{NRV Framework}
-\author{T. Couppey, L. Regnacq, R. Giraud, O. Romain, Y. Bornat, F. Kolbl}
+\author{T. Couppey\textsuperscript{2}, L. Regnacq\textsuperscript{1, 2}, R. Giraud\textsuperscript{1, 2}, O. Romain\textsuperscript{2}, Y. Bornat\textsuperscript{1}, F. Kolbl\textsuperscript{1, 2}}
 \institute{
-    Laboratory ETIS - UMR CNRS 8051, ENSEA, CY - Cergy, France\\
-    Laboratory IMS - UMR CNRS 5218, Bordeaux INP, U. Bordeaux - Talence, France}
+    \textsuperscript{1} Laboratory IMS - UMR CNRS 5218, Bordeaux INP, U. Bordeaux - Talence, France\\
+    \textsuperscript{2} Laboratory ETIS - UMR CNRS 8051, ENSEA, CY - Cergy, France}
 
 
 \begin{document}
@@ -21,7 +22,9 @@
 \column{0.62}
 \block{The NeuRon Virtualizer: a pythonic tool for simulating neural interfaces}{
     NRV is a pythonic framework to enable fast and user friendly simulations of the Peripheral Nervous System. Axons models are simulated with the NEURON software, and extracellular fields are computed either from analytic equations such as point source approximation or with a more detailed description of the nerve and electrode geometry and Finite Elements Method, either using COMSOL (additional commercial licence requiered) or the FENICS project. Stimulation waveform can be of random shapes, and any kinds of electrode can be combined to model complex stimulation strategies.
-
+    \vspace{
+        0.01\textheight
+    }
     NRV has been optimized for large population of axons, from generating correct population following a specific diameter probability, through automatic placement to computation and post-processing of the axons activity when a stimulus is applied. Parallel computation, interface with NEURON and COMSOL and FENICS is automatically handled by NRV. For a detailed description and full help on installation, basic usage and API documentation.
     \vspace{
         0.01\textheight
@@ -29,17 +32,22 @@
     \begin{center}
         \includegraphics[width=0.45\columnwidth]{./images/overview.png}
     \end{center}
+    \vspace{
+        0.01\textheight
+    }
+    It also allows the simulation of complex strategies such as multiple electrode combinations and waveforms ranging from conventional biphasic pulses to more complex modulated kHz stimuli. In addition, we provide automated support for stimulation strategy optimization and handle the computational backend transparently to the user. Our framework has been extensively tested and validated with several existing results in the literature.
+}
+
+\block{Scientific foundations - How to cite:}{
+
+    \begin{center}
+        \includegraphics[width=0.08\columnwidth]{./images/qrcode_PLOSpaper.png} 
+    \end{center}
+    Couppey, T., Regnacq, L., Giraud, R., Romain, O., Bornat, Y., $&$ Kolbl, F. (2024). NRV: An open framework for in silico evaluation of peripheral nerve electrical stimulation strategies. PLOS Computational Biology, 20(7), e1011826.
 
 }
 
 
-\block{Compilation \emph{will} fail on first attempt with hyperref}{
-Due to a bug in \texttt{tikzposter}, compilation will always fail in the 
-absence of an \texttt{.aux} file, i.e. when compiling for the first time, in 
-case you included the \texttt{hyperref} package.
-Just compile again and things will work fine.
-This will eventually be corrected in \texttt{tikzposter}.
-}
 
 \column{0.38}
 \block{Find us}
